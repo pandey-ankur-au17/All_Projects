@@ -52,6 +52,8 @@ function endGame(draw) {
     winningMessageTextElement.innerText = 'Draw!'
   } else {
     winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+    startit();
+    stopit();
   }
   winningMessageElement.classList.add('show')
 }
@@ -87,3 +89,18 @@ function checkWin(currentClass) {
     })
   })
 }
+
+
+startit = () => {
+  setTimeout(function () {
+      console.log("start");
+      confetti.start();
+  }, );
+  };
+
+  const stopit = () => {
+  setTimeout(function () {
+      console.log("stop");
+      confetti.stop();
+  }, 1000);
+  };
